@@ -141,4 +141,9 @@ $DEPARTMENT_NAME_MAP = [
     "Fine Arts Transfer" => "Performing Arts",
     "Fire Science" => "Fire Science",
     "General Studies" => "English",
-    "Geographic Information Systems (
+    "Geographic Information Systems" => "Physics and Engineering",
+    "Liberal Arts" => "English",
+    "Art/Art History/Design" => "Art, Art History & Design", // Normalize old format
+    "Business/Professional Studies" => "Business & Professional Studies", // Normalize old format
+    // Add more mappings as needed
+];
