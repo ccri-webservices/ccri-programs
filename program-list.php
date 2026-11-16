@@ -28,11 +28,25 @@ $STALE_CACHE_DURATION = 7 * 24 * 3600; // 7 days
 // Workforce programs — always read fresh (local file, no cache needed)
 $workforce_programs = [];
 $workforce_file = $_SERVER['DOCUMENT_ROOT'] . '/workforce/manage-programs/workforce-programs.json';
+$workforce_categories_file = $_SERVER['DOCUMENT_ROOT'] . '/workforce/manage-programs/workforce-categories.php';
+if (file_exists($workforce_categories_file)) {
+    require_once $workforce_categories_file;
+}
 if (file_exists($workforce_file)) {
     $workforce_json = file_get_contents($workforce_file);
     $decoded = json_decode($workforce_json, true);
     if (is_array($decoded)) {
         $workforce_programs = $decoded;
+    }
+}
+
+// Give every workforce program a `categories` list using current industry names.
+// `category` (first industry) is kept for anything still reading the old field.
+if (function_exists('workforce_program_categories')) {
+    foreach ($workforce_programs as $i => $program) {
+        $categories = workforce_program_categories($program);
+        $workforce_programs[$i]['categories'] = $categories;
+        $workforce_programs[$i]['category'] = $categories[0] ?? '';
     }
 }
 

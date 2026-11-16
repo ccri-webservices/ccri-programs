@@ -65,6 +65,19 @@ const PATHWAY_ORDER = [
   'Workforce Partnerships (Non-Degree)'
 ];
 
+/*
+ * WORKFORCE_CATEGORY_RENAMES — old workforce category names → new industry names
+ * Keeps old shared filter links (e.g. ?workforceCategory=Healthcare) working
+ * Mirrors WORKFORCE_CATEGORY_RENAMES in workforce/workforce-categories.php
+ */
+const WORKFORCE_CATEGORY_RENAMES = {
+  'Business and Technology':  'Business and Finance',
+  'Healthcare':               'Healthcare and Life Sciences',
+  'Renewable Energy':         'Energy and Utilities',
+  'Fit2Serve':                'Public Safety',
+  'Transportation Education': 'Transportation and Logistics'
+};
+
 // ═══════════════════════════════════════════════════════════════════
 // INDIVIDUAL PROGRAM PAGE AUTO-TRANSFORMATION
 // Automatically runs on program pages to transform labels

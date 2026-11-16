@@ -9,13 +9,15 @@ umask(0000);
 
 header('Content-Type: application/json');
 
+require_once __DIR__ . '/workforce-categories.php';
+
 // Path to data file
 $data_file = __DIR__ . '/workforce-programs.json';
 
 // Check if file exists
 if (!file_exists($data_file)) {
     // Return empty array if file doesn't exist yet
-    echo json_encode(['programs' => []]);
+    echo json_encode(['programs' => [], 'categories' => WORKFORCE_CATEGORIES]);
     exit;
 }
 
@@ -30,5 +32,10 @@ if ($programs === null) {
     exit;
 }
 
-echo json_encode(['programs' => $programs]);
+// Normalize categories so old entries show their new industry names
+foreach ($programs as $i => $program) {
+    $programs[$i]['categories'] = workforce_program_categories($program);
+}
+
+echo json_encode(['programs' => $programs, 'categories' => WORKFORCE_CATEGORIES]);
 ?>
