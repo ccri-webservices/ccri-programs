@@ -31,6 +31,18 @@ JavaScript files that power the program directory page filtering and individual 
 - Active filter chips display
 - Letter dividers (A, B, C, etc.)
 
+### workforce-directory.js
+**Purpose:** Workforce program directory (image cards with search + industry filter)  
+**Upload to:** `/_resources-2025/js/workforce-directory.js`  
+**Requires:** `/_resources-2025/css/workforce-directory.css` (repo: `css/workforce-directory.css`)  
+**Used by:** Workforce programs page (`/workforce/programs/`) only — page snippets in `pcf/workforce-directory-snippets.html`
+
+**What it does:**
+- Builds the search box, Industry dropdown, and card grid inside `<div id="workforce-directory">`
+- Shows workforce programs only, from `program-list.php`
+- Cards show image (default: `/workforce/programs/images/workforce-default.webp`), industry, title, and description
+- URL state (`?industry=...&q=...`) so filtered views can be shared or linked to
+
 ## How They Work Together
 
 ```
