@@ -154,6 +154,7 @@
         
         input[type="text"],
         input[type="url"],
+        input[type="search"],
         select,
         textarea {
             width: 100%;
@@ -340,12 +341,17 @@
 </div>
 <div class="form-actions"><button class="btn btn-primary" type="submit">Save Program</button> <button class="btn btn-secondary" type="button" onclick="hideForm()">Cancel</button></div>
 </form></div>
+<!-- Search -->
+<div class="form-group"><label for="programSearch">Search Programs</label> <input id="programSearch" type="search" placeholder="Search by name, industry, or URL" oninput="displayPrograms()" />
+<div id="searchCount" class="form-help"></div>
+</div>
 <!-- Programs Table -->
 <div id="programsTable"></div>
 </div>
 <p>
 <script>
-        // Programs by id (used by the Edit buttons) and the industry list
+        // All programs, programs by id (used by the Edit buttons), and the industry list
+        let allPrograms = [];
         let programsById = {};
         let categoryList = [];
 
@@ -356,7 +362,10 @@
                 .then(data => {
                     categoryList = data.categories || [];
                     renderCategoryOptions();
-                    displayPrograms(data.programs || []);
+                    allPrograms = data.programs || [];
+                    programsById = {};
+                    allPrograms.forEach(program => { programsById[program.id] = program; });
+                    displayPrograms();
                 })
                 .catch(error => {
                     showMessage('Error loading programs: ' + error.message, 'error');
@@ -387,18 +396,33 @@
             }
         }
 
-        // Display programs in table
-        function displayPrograms(programs) {
+        // Display programs in table, filtered by the search box
+        function displayPrograms() {
             const container = document.getElementById('programsTable');
-            programsById = {};
-            programs.forEach(program => { programsById[program.id] = program; });
+            const countEl = document.getElementById('searchCount');
+            const query = document.getElementById('programSearch').value.trim().toLowerCase();
+            const programs = !query ? allPrograms : allPrograms.filter(program =>
+                [program.title, program.url, ...(program.categories || [])]
+                    .join(' ').toLowerCase().includes(query)
+            );
+            countEl.textContent = query ? `Showing ${programs.length} of ${allPrograms.length} programs` : '';
 
-            if (programs.length === 0) {
+            if (allPrograms.length === 0) {
                 container.innerHTML = `
                     <div class="empty-state">
                         <div class="empty-state-icon">📚</div>
                         <h3>No Programs Yet</h3>
                         <p>Click "Add New Program" to get started</p>
+                    </div>
+                `;
+                return;
+            }
+
+            if (programs.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <h3>No Matching Programs</h3>
+                        <p>Try a different search</p>
                     </div>
                 `;
                 return;
