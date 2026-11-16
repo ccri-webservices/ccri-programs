@@ -242,9 +242,9 @@ a.wf-dir-card {
   text-decoration: underline;
 }
 
-.wf-dir-card-desc {
+p.wf-dir-card-desc {
   font-family: "Roboto", sans-serif;
-  font-size: 1em;
+  font-size: 1.08em;
   line-height: 1.6;
   color: var(--wf-text);
   margin: 0;
