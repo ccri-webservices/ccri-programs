@@ -79,6 +79,44 @@
   outline-offset: 2px;
 }
 
+/* ── Active filter chips + "Clear all" — inside the filter box, below the
+      fields, matching the course directory ── */
+.wf-dir-active {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6em;
+  margin-top: 0.5em;
+}
+
+.wf-dir-active[hidden] {
+  display: none;
+}
+
+.wf-dir-clear-all {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: var(--wf-green);
+  background: transparent;
+  border: 1px solid var(--wf-green);
+  border-radius: 999px;
+  padding: 0.5em 1.1em;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.wf-dir-clear-all:hover {
+  color: #fff;
+  background: var(--wf-green);
+}
+
+.wf-dir-clear-all:focus-visible {
+  outline: 3px solid var(--wf-green);
+  outline-offset: 2px;
+}
+
 /* ── Count ── */
 .wf-dir .wf-dir-count {
   font-family: "Roboto Condensed", sans-serif;
@@ -88,6 +126,43 @@
   text-transform: uppercase;
   color: var(--wf-text);
   margin: 0 0 1.2em;
+}
+
+/* Chips match the main program and course directories */
+.wf-dir-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375em;
+}
+
+.wf-dir-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  color: #fff;
+  background: var(--wf-green);
+  border: none;
+  border-radius: 20px;
+  padding: 0.375em 0.75em;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.wf-dir-chip:hover {
+  background: #008949;
+}
+
+.wf-dir-chip:focus-visible {
+  outline: 3px solid var(--wf-green);
+  outline-offset: 2px;
+}
+
+.wf-dir-chip-x {
+  opacity: 0.7;
 }
 
 /* ── Card grid ── */

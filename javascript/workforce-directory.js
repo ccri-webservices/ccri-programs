@@ -12,7 +12,7 @@
   const DATA_URL = "/_resources-2025/php/program-list.php";
   const DEFAULT_IMAGE = "/workforce/programs/images/workforce-default.webp";
 
-  let root, searchInput, industrySelect, countEl, grid, emptyEl;
+  let root, searchInput, industrySelect, countEl, activeEl, chipsEl, grid, emptyEl;
   let programs = [];
 
   /* ══ INITIALIZATION ══ */
@@ -57,6 +57,10 @@
           <label for="wfIndustry">Industry</label>
           <select id="wfIndustry"><option value="">All industries</option></select>
         </div>
+        <div class="wf-dir-active" id="wfActive" hidden>
+          <div class="wf-dir-chips" id="wfChips"></div>
+          <button type="button" class="wf-dir-clear-all" id="wfClearAll">× Clear all filters</button>
+        </div>
       </div>
       <h2 class="wf-dir-count" id="wfCount" aria-live="polite"></h2>
       <div class="wf-dir-grid" id="wfGrid"></div>
@@ -69,6 +73,8 @@
     searchInput = document.getElementById("wfSearch");
     industrySelect = document.getElementById("wfIndustry");
     countEl = document.getElementById("wfCount");
+    activeEl = document.getElementById("wfActive");
+    chipsEl = document.getElementById("wfChips");
     grid = document.getElementById("wfGrid");
     emptyEl = document.getElementById("wfEmpty");
 
@@ -90,13 +96,56 @@
       render();
       pushParams();
     });
-    document.getElementById("wfClear").addEventListener("click", () => {
-      searchInput.value = "";
-      industrySelect.value = "";
+    document.getElementById("wfClear").addEventListener("click", clearAll);
+    document.getElementById("wfClearAll").addEventListener("click", clearAll);
+  }
+
+  function clearAll() {
+    searchInput.value = "";
+    industrySelect.value = "";
+    render();
+    pushParams();
+    searchInput.focus();
+  }
+
+  /* Active filter chips + "Clear all" (inside the filter box, like the
+     course directory) — click a chip to remove that filter */
+  function renderChips(q, industry) {
+    const chips = [];
+    if (industry)
+      chips.push(
+        makeChip("Industry: " + industry, () => {
+          industrySelect.value = "";
+        }),
+      );
+    if (q)
+      chips.push(
+        makeChip("Search: " + q, () => {
+          searchInput.value = "";
+        }),
+      );
+    chipsEl.replaceChildren(...chips);
+    activeEl.hidden = chips.length === 0;
+  }
+
+  function makeChip(label, clear) {
+    const chip = document.createElement("button");
+    chip.type = "button";
+    chip.className = "wf-dir-chip";
+    chip.setAttribute("aria-label", "Remove filter: " + label);
+    chip.textContent = label + " ";
+    const x = document.createElement("span");
+    x.className = "wf-dir-chip-x";
+    x.setAttribute("aria-hidden", "true");
+    x.textContent = "×";
+    chip.appendChild(x);
+    chip.addEventListener("click", () => {
+      clear();
       render();
       pushParams();
       searchInput.focus();
     });
+    return chip;
   }
 
   /* ══ FILTER + RENDER ══ */
@@ -115,6 +164,7 @@
 
     countEl.textContent =
       matches.length + (matches.length === 1 ? " program found" : " programs found");
+    renderChips(searchInput.value.trim(), industry);
     grid.replaceChildren(...matches.map((p) => makeCard(p, industry)));
     emptyEl.hidden = matches.length > 0;
   }
