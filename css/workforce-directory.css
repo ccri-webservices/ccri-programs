@@ -56,6 +56,18 @@
   padding: 0 1em;
 }
 
+/* Same chevron as the main program directory's .sidebar-select */
+.wf-dir-field select {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  padding-right: 2.2em;
+  background-image: url("data:image/svg+xml,%3Csvg fill='none' height='10' viewBox='0 0 18 10' width='18' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m17.5419 2.36978-7.4609 7.14844c-.23437.19531-.46875.27344-.66406.27344-.23437 0-.46875-.07813-.66406-.23438l-7.5-7.1875c-.390627-.35156-.390627-.97656-.03906-1.32812.35156-.390626.97656-.390626 1.32812-.03906l6.875 6.5625 6.83596-6.5625c.3515-.351566.9765-.351566 1.3281.03906.3516.35156.3516.97656-.0391 1.32812z' fill='%23262626'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 0.625em) 50%;
+  background-size: 1em;
+}
+
 .wf-dir-search-box {
   position: relative;
 }
