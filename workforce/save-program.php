@@ -12,12 +12,19 @@ $data_file = __DIR__ . '/workforce-programs.json';
 
 header('Content-Type: application/json');
 
+require_once __DIR__ . '/workforce-categories.php';
+
 // Get form data
 $id = $_POST['id'] ?? '';
 $title = trim($_POST['title'] ?? '');
 $url = trim($_POST['url'] ?? '');
-$category = trim($_POST['category'] ?? '');
+$categories = $_POST['categories'] ?? [];
+$image = trim($_POST['image'] ?? '');
 $description = trim($_POST['description'] ?? '');
+
+// Keep only known industries, in the official order
+$categories = is_array($categories) ? array_map('trim', $categories) : [];
+$categories = array_values(array_intersect(WORKFORCE_CATEGORIES, $categories));
 
 // Validate required fields
 if (empty($title)) {
@@ -30,15 +37,21 @@ if (empty($url)) {
     exit;
 }
 
-// Validate category
-if (empty($category)) {
-    echo json_encode(['success' => false, 'message' => 'Category is required']);
+// Validate industries
+if (empty($categories)) {
+    echo json_encode(['success' => false, 'message' => 'Select at least one industry']);
     exit;
 }
 
 // Validate URL format
 if (!preg_match('#^(/|https?://www\.ccri\.edu)#', $url)) {
     echo json_encode(['success' => false, 'message' => 'URL must start with / or https://www.ccri.edu']);
+    exit;
+}
+
+// Validate image path (optional)
+if ($image !== '' && !preg_match('#^(/(?!/)|https?://www\.ccri\.edu/)#', $image)) {
+    echo json_encode(['success' => false, 'message' => 'Image path must start with / or https://www.ccri.edu']);
     exit;
 }
 
@@ -74,7 +87,9 @@ $program = [
     'url' => $url,
     'type' => 'workforce',
     'pathway' => 'Workforce Partnerships',
-    'category' => $category,
+    'categories' => $categories,
+    'category' => $categories[0], // kept for anything still reading the old single field
+    'image' => $image,
     'description' => $description
 ];
 

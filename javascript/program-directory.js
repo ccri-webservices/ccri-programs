@@ -104,7 +104,7 @@ function buildFilters() {
     const p = normPathway(c.dataset.pathway);
     const t = c.dataset.type;
     const ch = c.dataset.letter || "#";
-    const wc = c.dataset.workforceCategory;
+    const wcs = cardWorkforceCategories(c);
     const locs = c.dataset.locations
       ? c.dataset.locations
           .split(",")
@@ -115,8 +115,9 @@ function buildFilters() {
     if (p) pathwayCounts[p] = (pathwayCounts[p] || 0) + 1;
     if (t) typeCounts[t] = (typeCounts[t] || 0) + 1;
     azCounts[ch] = (azCounts[ch] || 0) + 1;
-    if (wc)
+    wcs.forEach((wc) => {
       workforceCategoryCounts[wc] = (workforceCategoryCounts[wc] || 0) + 1;
+    });
     locs.forEach((loc) => {
       locationCounts[loc] = (locationCounts[loc] || 0) + 1;
     });
@@ -150,24 +151,15 @@ function buildFilters() {
     }
   });
 
-  /* Workforce category filter */
-  const workforceCategories = [
-    "Business and Technology",
-    "Education",
-    "Healthcare",
-    "Manufacturing and Trades",
-    "Renewable Energy",
-    "Fit2Serve",
-    "GED & Adult Education",
-    "Transportation Education",
-  ];
-  workforceCategories.forEach((category) => {
-    if (workforceCategoryCounts[category]) {
+  /* Workforce category filter — every industry in use, A–Z
+     (the industry list itself lives in workforce/workforce-categories.php) */
+  Object.keys(workforceCategoryCounts)
+    .sort((a, b) => a.localeCompare(b))
+    .forEach((category) => {
       const o = document.createElement("option");
       o.value = o.textContent = category;
       workforceCategorySel.appendChild(o);
-    }
-  });
+    });
 
   /* Location filter */
   const locationOrder = ["Flanagan", "Knight", "Liston", "Newport", "Online"];
@@ -202,6 +194,23 @@ function pickAZ(ch) {
   go();
 }
 
+/* ══ WORKFORCE CATEGORIES ══ */
+/* A card's industries: data-workforce-categories ("A|B|C"), or the older
+   single data-workforce-category until the directory XSL is updated */
+function cardWorkforceCategories(c) {
+  if (c.dataset.workforceCategories)
+    return c.dataset.workforceCategories.split("|").filter(Boolean);
+  return c.dataset.workforceCategory ? [c.dataset.workforceCategory] : [];
+}
+
+function renameWorkforceCategory(category) {
+  return (
+    (typeof WORKFORCE_CATEGORY_RENAMES !== "undefined" &&
+      WORKFORCE_CATEGORY_RENAMES[category]) ||
+    category
+  );
+}
+
 /* ══ URL ↔ STATE ══ */
 function getParams() {
   const p = new URLSearchParams(window.location.search);
@@ -210,7 +219,7 @@ function getParams() {
     pathway: p.get("pathway") || "",
     type: p.get("type") || "",
     az: p.get("az") || "",
-    workforceCategory: p.get("workforceCategory") || "",
+    workforceCategory: renameWorkforceCategory(p.get("workforceCategory") || ""),
     location: p.get("location") || "",
     page: parseInt(p.get("page") || "1", 10),
   };
@@ -271,7 +280,7 @@ function _filter() {
     if (state.az && c.dataset.letter !== state.az) return false;
     if (
       state.workforceCategory &&
-      c.dataset.workforceCategory !== state.workforceCategory
+      !cardWorkforceCategories(c).includes(state.workforceCategory)
     )
       return false;
     if (state.location) {
