@@ -194,9 +194,12 @@ RewriteCond %{DOCUMENT_ROOT}/workforce/programs/renewableenergy/solar-energy.htm
 RewriteRule ^workforce/programs/renewableenergy/solar-energy(\.html)?$ https://%{HTTP_HOST}/workforce/programs/?industry=energy-and-utilities [R=302,L,NC]
 
 # /workforce/programs/fit-2-serve/  (move)
-RewriteCond %{REQUEST_URI} ^/workforce/programs/fit-2-serve(/|/index\.html)?$ [NC]
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/fit-2-serve/index.html !-f
-RewriteRule ^ https://%{HTTP_HOST}/workforce/programs/fit-2-serve.html [R=302,L,NC]
+RewriteRule ^workforce/programs/fit-2-serve(/|/index\.html)?$ https://%{HTTP_HOST}/workforce/programs/fit2serve.html [R=302,L,NC]
+
+# /workforce/programs/fit-2-serve.html  (move)
+RewriteCond %{DOCUMENT_ROOT}/workforce/programs/fit-2-serve.html !-f
+RewriteRule ^workforce/programs/fit-2-serve(\.html)?$ https://%{HTTP_HOST}/workforce/programs/fit2serve.html [R=302,L,NC]
 
 # /workforce/programs/technologyonline/BusinessComputingApplications.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/technologyonline/BusinessComputingApplications.html !-f
@@ -231,9 +234,8 @@ RewriteCond %{DOCUMENT_ROOT}/workforce/programs/technologyonline/index.html !-f
 RewriteRule ^workforce/programs/technologyonline(/|/index\.html)?$ https://%{HTTP_HOST}/workforce/programs/ [R=302,L,NC]
 
 # /workforce/programs/fit-2-serve/images/fit2serve-logo-new.jpg  (move-file)
-RewriteCond %{REQUEST_URI} ^/workforce/programs/fit-2-serve/images/fit2serve-logo-new\.jpg$ [NC]
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/fit-2-serve/images/fit2serve-logo-new.jpg !-f
-RewriteRule ^ https://%{HTTP_HOST}/workforce/programs/images/fit2serve-logo-new.jpg [R=302,L,NC]
+RewriteRule ^workforce/programs/fit-2-serve/images/fit2serve-logo-new\.jpg$ https://%{HTTP_HOST}/workforce/programs/images/fit2serve-logo-new.jpg [R=302,L,NC]
 
 # /workforce/programs/technologyonline/images/bank-logos/  (move-file)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/technologyonline/images/bank-logos/$1 !-f

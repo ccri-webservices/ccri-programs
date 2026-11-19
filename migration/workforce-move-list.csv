@@ -46,7 +46,8 @@ old_url,new_url,action,in_directory,notes
 /workforce/programs/manufacturingtrades/,/workforce/programs/,delete,no,industry index page; split across 3 industries so goes to unfiltered directory
 /workforce/programs/renewableenergy/,/workforce/programs/offshore-wind.html,move,yes,index.pcf is the GWO program page itself
 /workforce/programs/renewableenergy/solar-energy.html,/workforce/programs/?industry=energy-and-utilities,delete,no,empty placeholder
-/workforce/programs/fit-2-serve/,/workforce/programs/fit-2-serve.html,move,yes,index.pcf is the Fit2Serve program page itself
+/workforce/programs/fit-2-serve/,/workforce/programs/fit2serve.html,move,yes,index.pcf is the Fit2Serve program page itself; named fit2serve (not fit-2-serve) so it does not collide with the old folder name
+/workforce/programs/fit-2-serve.html,/workforce/programs/fit2serve.html,move,no,was live briefly on 2026-11-19 before the rename
 /workforce/programs/technologyonline/BusinessComputingApplications.html,/workforce/programs/business-computing-applications.html,move,yes,
 /workforce/programs/technologyonline/DealerTraining.html,/workforce/programs/table-games.html,move,yes,Introduction to Table Games
 /workforce/programs/technologyonline/OnlineTraining.html,/workforce/programs/online-training.html,move,yes,ed2go
