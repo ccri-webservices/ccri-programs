@@ -7,237 +7,237 @@
 
 # /workforce/programs/education/EarlyChildhoodEducation2.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/education/EarlyChildhoodEducation2.html !-f
-RewriteRule ^workforce/programs/education/EarlyChildhoodEducation2(\.html)?$ /workforce/programs/early-childhood-education.html [R=302,L,NC]
+RewriteRule ^workforce/programs/education/EarlyChildhoodEducation2(\.html)?$ https://%{HTTP_HOST}/workforce/programs/early-childhood-education.html [R=302,L,NC]
 
 # /workforce/programs/education/ParaPro.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/education/ParaPro.html !-f
-RewriteRule ^workforce/programs/education/ParaPro(\.html)?$ /workforce/programs/parapro-assessment.html [R=302,L,NC]
+RewriteRule ^workforce/programs/education/ParaPro(\.html)?$ https://%{HTTP_HOST}/workforce/programs/parapro-assessment.html [R=302,L,NC]
 
 # /workforce/programs/education/TeachersAssistant.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/education/TeachersAssistant.html !-f
-RewriteRule ^workforce/programs/education/TeachersAssistant(\.html)?$ /workforce/programs/teacher-assistant.html [R=302,L,NC]
+RewriteRule ^workforce/programs/education/TeachersAssistant(\.html)?$ https://%{HTTP_HOST}/workforce/programs/teacher-assistant.html [R=302,L,NC]
 
 # /workforce/programs/education/  (delete)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/education/index.html !-f
-RewriteRule ^workforce/programs/education(/|/index\.html)?$ /workforce/programs/?industry=education [R=302,L,NC]
+RewriteRule ^workforce/programs/education(/|/index\.html)?$ https://%{HTTP_HOST}/workforce/programs/?industry=education [R=302,L,NC]
 
 # /workforce/programs/healthcare/ACLS.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/healthcare/ACLS.html !-f
-RewriteRule ^workforce/programs/healthcare/ACLS(\.html)?$ /workforce/programs/acls.html [R=302,L,NC]
+RewriteRule ^workforce/programs/healthcare/ACLS(\.html)?$ https://%{HTTP_HOST}/workforce/programs/acls.html [R=302,L,NC]
 
 # /workforce/programs/healthcare/AdvancedEmergencyMedicalTechnician.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/healthcare/AdvancedEmergencyMedicalTechnician.html !-f
-RewriteRule ^workforce/programs/healthcare/AdvancedEmergencyMedicalTechnician(\.html)?$ /workforce/programs/advanced-emt.html [R=302,L,NC]
+RewriteRule ^workforce/programs/healthcare/AdvancedEmergencyMedicalTechnician(\.html)?$ https://%{HTTP_HOST}/workforce/programs/advanced-emt.html [R=302,L,NC]
 
 # /workforce/programs/healthcare/BLSCPR.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/healthcare/BLSCPR.html !-f
-RewriteRule ^workforce/programs/healthcare/BLSCPR(\.html)?$ /workforce/programs/bls-cpr.html [R=302,L,NC]
+RewriteRule ^workforce/programs/healthcare/BLSCPR(\.html)?$ https://%{HTTP_HOST}/workforce/programs/bls-cpr.html [R=302,L,NC]
 
 # /workforce/programs/healthcare/BLSCPRHandsOnSkillsDemo.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/healthcare/BLSCPRHandsOnSkillsDemo.html !-f
-RewriteRule ^workforce/programs/healthcare/BLSCPRHandsOnSkillsDemo(\.html)?$ /workforce/programs/bls-cpr-skills-demo.html [R=302,L,NC]
+RewriteRule ^workforce/programs/healthcare/BLSCPRHandsOnSkillsDemo(\.html)?$ https://%{HTTP_HOST}/workforce/programs/bls-cpr-skills-demo.html [R=302,L,NC]
 
 # /workforce/programs/healthcare/BLSCPRHeartsaverFirstAid.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/healthcare/BLSCPRHeartsaverFirstAid.html !-f
-RewriteRule ^workforce/programs/healthcare/BLSCPRHeartsaverFirstAid(\.html)?$ /workforce/programs/heartsaver-first-aid-cpr.html [R=302,L,NC]
+RewriteRule ^workforce/programs/healthcare/BLSCPRHeartsaverFirstAid(\.html)?$ https://%{HTTP_HOST}/workforce/programs/heartsaver-first-aid-cpr.html [R=302,L,NC]
 
 # /workforce/programs/healthcare/CEHCBS.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/healthcare/CEHCBS.html !-f
-RewriteRule ^workforce/programs/healthcare/CEHCBS(\.html)?$ /workforce/programs/hcbs-continuing-education.html [R=302,L,NC]
+RewriteRule ^workforce/programs/healthcare/CEHCBS(\.html)?$ https://%{HTTP_HOST}/workforce/programs/hcbs-continuing-education.html [R=302,L,NC]
 
 # /workforce/programs/healthcare/CNA.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/healthcare/CNA.html !-f
-RewriteRule ^workforce/programs/healthcare/CNA(\.html)?$ /workforce/programs/cna.html [R=302,L,NC]
+RewriteRule ^workforce/programs/healthcare/CNA(\.html)?$ https://%{HTTP_HOST}/workforce/programs/cna.html [R=302,L,NC]
 
 # /workforce/programs/healthcare/CNAStateTest.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/healthcare/CNAStateTest.html !-f
-RewriteRule ^workforce/programs/healthcare/CNAStateTest(\.html)?$ /workforce/programs/cna-state-test.html [R=302,L,NC]
+RewriteRule ^workforce/programs/healthcare/CNAStateTest(\.html)?$ https://%{HTTP_HOST}/workforce/programs/cna-state-test.html [R=302,L,NC]
 
 # /workforce/programs/healthcare/CaseManager.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/healthcare/CaseManager.html !-f
-RewriteRule ^workforce/programs/healthcare/CaseManager(\.html)?$ /workforce/programs/case-manager.html [R=302,L,NC]
+RewriteRule ^workforce/programs/healthcare/CaseManager(\.html)?$ https://%{HTTP_HOST}/workforce/programs/case-manager.html [R=302,L,NC]
 
 # /workforce/programs/healthcare/DentalAssistant.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/healthcare/DentalAssistant.html !-f
-RewriteRule ^workforce/programs/healthcare/DentalAssistant(\.html)?$ /workforce/programs/dental-assistant.html [R=302,L,NC]
+RewriteRule ^workforce/programs/healthcare/DentalAssistant(\.html)?$ https://%{HTTP_HOST}/workforce/programs/dental-assistant.html [R=302,L,NC]
 
 # /workforce/programs/healthcare/DentalRadiography.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/healthcare/DentalRadiography.html !-f
-RewriteRule ^workforce/programs/healthcare/DentalRadiography(\.html)?$ /workforce/programs/dental-radiography.html [R=302,L,NC]
+RewriteRule ^workforce/programs/healthcare/DentalRadiography(\.html)?$ https://%{HTTP_HOST}/workforce/programs/dental-radiography.html [R=302,L,NC]
 
 # /workforce/programs/healthcare/EmergencyMedicalTechnician.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/healthcare/EmergencyMedicalTechnician.html !-f
-RewriteRule ^workforce/programs/healthcare/EmergencyMedicalTechnician(\.html)?$ /workforce/programs/emt.html [R=302,L,NC]
+RewriteRule ^workforce/programs/healthcare/EmergencyMedicalTechnician(\.html)?$ https://%{HTTP_HOST}/workforce/programs/emt.html [R=302,L,NC]
 
 # /workforce/programs/healthcare/EmpowerRN.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/healthcare/EmpowerRN.html !-f
-RewriteRule ^workforce/programs/healthcare/EmpowerRN(\.html)?$ /workforce/programs/empower-rn.html [R=302,L,NC]
+RewriteRule ^workforce/programs/healthcare/EmpowerRN(\.html)?$ https://%{HTTP_HOST}/workforce/programs/empower-rn.html [R=302,L,NC]
 
 # /workforce/programs/healthcare/Laser.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/healthcare/Laser.html !-f
-RewriteRule ^workforce/programs/healthcare/Laser(\.html)?$ /workforce/programs/dental-laser.html [R=302,L,NC]
+RewriteRule ^workforce/programs/healthcare/Laser(\.html)?$ https://%{HTTP_HOST}/workforce/programs/dental-laser.html [R=302,L,NC]
 
 # /workforce/programs/healthcare/MedicalAssistant.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/healthcare/MedicalAssistant.html !-f
-RewriteRule ^workforce/programs/healthcare/MedicalAssistant(\.html)?$ /workforce/programs/medical-assistant.html [R=302,L,NC]
+RewriteRule ^workforce/programs/healthcare/MedicalAssistant(\.html)?$ https://%{HTTP_HOST}/workforce/programs/medical-assistant.html [R=302,L,NC]
 
 # /workforce/programs/healthcare/MedicationAideTech.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/healthcare/MedicationAideTech.html !-f
-RewriteRule ^workforce/programs/healthcare/MedicationAideTech(\.html)?$ /workforce/programs/medication-aide.html [R=302,L,NC]
+RewriteRule ^workforce/programs/healthcare/MedicationAideTech(\.html)?$ https://%{HTTP_HOST}/workforce/programs/medication-aide.html [R=302,L,NC]
 
 # /workforce/programs/healthcare/Ophthalmic.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/healthcare/Ophthalmic.html !-f
-RewriteRule ^workforce/programs/healthcare/Ophthalmic(\.html)?$ /workforce/programs/ophthalmic-technician.html [R=302,L,NC]
+RewriteRule ^workforce/programs/healthcare/Ophthalmic(\.html)?$ https://%{HTTP_HOST}/workforce/programs/ophthalmic-technician.html [R=302,L,NC]
 
 # /workforce/programs/healthcare/PatientSupportSpecialist.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/healthcare/PatientSupportSpecialist.html !-f
-RewriteRule ^workforce/programs/healthcare/PatientSupportSpecialist(\.html)?$ /workforce/programs/patient-support-specialist.html [R=302,L,NC]
+RewriteRule ^workforce/programs/healthcare/PatientSupportSpecialist(\.html)?$ https://%{HTTP_HOST}/workforce/programs/patient-support-specialist.html [R=302,L,NC]
 
 # /workforce/programs/healthcare/PharmacyTechnician.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/healthcare/PharmacyTechnician.html !-f
-RewriteRule ^workforce/programs/healthcare/PharmacyTechnician(\.html)?$ /workforce/programs/pharmacy-technician.html [R=302,L,NC]
+RewriteRule ^workforce/programs/healthcare/PharmacyTechnician(\.html)?$ https://%{HTTP_HOST}/workforce/programs/pharmacy-technician.html [R=302,L,NC]
 
 # /workforce/programs/healthcare/PublicHealthDentalHygienist.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/healthcare/PublicHealthDentalHygienist.html !-f
-RewriteRule ^workforce/programs/healthcare/PublicHealthDentalHygienist(\.html)?$ /workforce/programs/public-health-dental-hygienist.html [R=302,L,NC]
+RewriteRule ^workforce/programs/healthcare/PublicHealthDentalHygienist(\.html)?$ https://%{HTTP_HOST}/workforce/programs/public-health-dental-hygienist.html [R=302,L,NC]
 
 # /workforce/programs/healthcare/RefreshRN.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/healthcare/RefreshRN.html !-f
-RewriteRule ^workforce/programs/healthcare/RefreshRN(\.html)?$ /workforce/programs/refresh-rn.html [R=302,L,NC]
+RewriteRule ^workforce/programs/healthcare/RefreshRN(\.html)?$ https://%{HTTP_HOST}/workforce/programs/refresh-rn.html [R=302,L,NC]
 
 # /workforce/programs/healthcare/SterileProcessingTech.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/healthcare/SterileProcessingTech.html !-f
-RewriteRule ^workforce/programs/healthcare/SterileProcessingTech(\.html)?$ /workforce/programs/sterile-processing-technician.html [R=302,L,NC]
+RewriteRule ^workforce/programs/healthcare/SterileProcessingTech(\.html)?$ https://%{HTTP_HOST}/workforce/programs/sterile-processing-technician.html [R=302,L,NC]
 
 # /workforce/programs/healthcare/immunization-health-compliance.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/healthcare/immunization-health-compliance.html !-f
-RewriteRule ^workforce/programs/healthcare/immunization-health-compliance(\.html)?$ /workforce/programs/immunization-health-compliance.html [R=302,L,NC]
+RewriteRule ^workforce/programs/healthcare/immunization-health-compliance(\.html)?$ https://%{HTTP_HOST}/workforce/programs/immunization-health-compliance.html [R=302,L,NC]
 
 # /workforce/programs/healthcare/refresh-lpn.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/healthcare/refresh-lpn.html !-f
-RewriteRule ^workforce/programs/healthcare/refresh-lpn(\.html)?$ /workforce/programs/refresh-lpn.html [R=302,L,NC]
+RewriteRule ^workforce/programs/healthcare/refresh-lpn(\.html)?$ https://%{HTTP_HOST}/workforce/programs/refresh-lpn.html [R=302,L,NC]
 
 # /workforce/programs/healthcare/stop-the-bleed.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/healthcare/stop-the-bleed.html !-f
-RewriteRule ^workforce/programs/healthcare/stop-the-bleed(\.html)?$ /workforce/programs/stop-the-bleed.html [R=302,L,NC]
+RewriteRule ^workforce/programs/healthcare/stop-the-bleed(\.html)?$ https://%{HTTP_HOST}/workforce/programs/stop-the-bleed.html [R=302,L,NC]
 
 # /workforce/programs/healthcare/  (delete)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/healthcare/index.html !-f
-RewriteRule ^workforce/programs/healthcare(/|/index\.html)?$ /workforce/programs/?industry=healthcare-and-life-sciences [R=302,L,NC]
+RewriteRule ^workforce/programs/healthcare(/|/index\.html)?$ https://%{HTTP_HOST}/workforce/programs/?industry=healthcare-and-life-sciences [R=302,L,NC]
 
 # /workforce/programs/hospitality/culinary.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/hospitality/culinary.html !-f
-RewriteRule ^workforce/programs/hospitality/culinary(\.html)?$ /workforce/programs/culinary.html [R=302,L,NC]
+RewriteRule ^workforce/programs/hospitality/culinary(\.html)?$ https://%{HTTP_HOST}/workforce/programs/culinary.html [R=302,L,NC]
 
 # /workforce/programs/hospitality/table-games.html  (delete)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/hospitality/table-games.html !-f
-RewriteRule ^workforce/programs/hospitality/table-games(\.html)?$ /workforce/programs/table-games.html [R=302,L,NC]
+RewriteRule ^workforce/programs/hospitality/table-games(\.html)?$ https://%{HTTP_HOST}/workforce/programs/table-games.html [R=302,L,NC]
 
 # /workforce/programs/hospitality/  (delete)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/hospitality/index.html !-f
-RewriteRule ^workforce/programs/hospitality(/|/index\.html)?$ /workforce/programs/?industry=hospitality [R=302,L,NC]
+RewriteRule ^workforce/programs/hospitality(/|/index\.html)?$ https://%{HTTP_HOST}/workforce/programs/?industry=hospitality [R=302,L,NC]
 
 # /workforce/programs/manufacturingtrades/CNC.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/manufacturingtrades/CNC.html !-f
-RewriteRule ^workforce/programs/manufacturingtrades/CNC(\.html)?$ /workforce/programs/cnc-manufacturing.html [R=302,L,NC]
+RewriteRule ^workforce/programs/manufacturingtrades/CNC(\.html)?$ https://%{HTTP_HOST}/workforce/programs/cnc-manufacturing.html [R=302,L,NC]
 
 # /workforce/programs/manufacturingtrades/ElectricalApprenticeship.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/manufacturingtrades/ElectricalApprenticeship.html !-f
-RewriteRule ^workforce/programs/manufacturingtrades/ElectricalApprenticeship(\.html)?$ /workforce/programs/electrical-apprenticeship.html [R=302,L,NC]
+RewriteRule ^workforce/programs/manufacturingtrades/ElectricalApprenticeship(\.html)?$ https://%{HTTP_HOST}/workforce/programs/electrical-apprenticeship.html [R=302,L,NC]
 
 # /workforce/programs/manufacturingtrades/MC3.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/manufacturingtrades/MC3.html !-f
-RewriteRule ^workforce/programs/manufacturingtrades/MC3(\.html)?$ /workforce/programs/ready-to-build-mc3.html [R=302,L,NC]
+RewriteRule ^workforce/programs/manufacturingtrades/MC3(\.html)?$ https://%{HTTP_HOST}/workforce/programs/ready-to-build-mc3.html [R=302,L,NC]
 
 # /workforce/programs/manufacturingtrades/OSHA.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/manufacturingtrades/OSHA.html !-f
-RewriteRule ^workforce/programs/manufacturingtrades/OSHA(\.html)?$ /workforce/programs/osha-10.html [R=302,L,NC]
+RewriteRule ^workforce/programs/manufacturingtrades/OSHA(\.html)?$ https://%{HTTP_HOST}/workforce/programs/osha-10.html [R=302,L,NC]
 
 # /workforce/programs/manufacturingtrades/ProcessTech.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/manufacturingtrades/ProcessTech.html !-f
-RewriteRule ^workforce/programs/manufacturingtrades/ProcessTech(\.html)?$ /workforce/programs/process-technology.html [R=302,L,NC]
+RewriteRule ^workforce/programs/manufacturingtrades/ProcessTech(\.html)?$ https://%{HTTP_HOST}/workforce/programs/process-technology.html [R=302,L,NC]
 
 # /workforce/programs/manufacturingtrades/electric-boat-trades.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/manufacturingtrades/electric-boat-trades.html !-f
-RewriteRule ^workforce/programs/manufacturingtrades/electric-boat-trades(\.html)?$ /workforce/programs/electric-boat-trades.html [R=302,L,NC]
+RewriteRule ^workforce/programs/manufacturingtrades/electric-boat-trades(\.html)?$ https://%{HTTP_HOST}/workforce/programs/electric-boat-trades.html [R=302,L,NC]
 
 # /workforce/programs/manufacturingtrades/techamp.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/manufacturingtrades/techamp.html !-f
-RewriteRule ^workforce/programs/manufacturingtrades/techamp(\.html)?$ /workforce/programs/techamp.html [R=302,L,NC]
+RewriteRule ^workforce/programs/manufacturingtrades/techamp(\.html)?$ https://%{HTTP_HOST}/workforce/programs/techamp.html [R=302,L,NC]
 
 # /workforce/programs/manufacturingtrades/utilities.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/manufacturingtrades/utilities.html !-f
-RewriteRule ^workforce/programs/manufacturingtrades/utilities(\.html)?$ /workforce/programs/intro-to-utilities.html [R=302,L,NC]
+RewriteRule ^workforce/programs/manufacturingtrades/utilities(\.html)?$ https://%{HTTP_HOST}/workforce/programs/intro-to-utilities.html [R=302,L,NC]
 
 # /workforce/programs/manufacturingtrades/water-treatment-distribution.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/manufacturingtrades/water-treatment-distribution.html !-f
-RewriteRule ^workforce/programs/manufacturingtrades/water-treatment-distribution(\.html)?$ /workforce/programs/water-treatment-distribution.html [R=302,L,NC]
+RewriteRule ^workforce/programs/manufacturingtrades/water-treatment-distribution(\.html)?$ https://%{HTTP_HOST}/workforce/programs/water-treatment-distribution.html [R=302,L,NC]
 
 # /workforce/programs/manufacturingtrades/water.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/manufacturingtrades/water.html !-f
-RewriteRule ^workforce/programs/manufacturingtrades/water(\.html)?$ /workforce/programs/clean-water-workforce.html [R=302,L,NC]
+RewriteRule ^workforce/programs/manufacturingtrades/water(\.html)?$ https://%{HTTP_HOST}/workforce/programs/clean-water-workforce.html [R=302,L,NC]
 
 # /workforce/programs/manufacturingtrades/welding.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/manufacturingtrades/welding.html !-f
-RewriteRule ^workforce/programs/manufacturingtrades/welding(\.html)?$ /workforce/programs/welding.html [R=302,L,NC]
+RewriteRule ^workforce/programs/manufacturingtrades/welding(\.html)?$ https://%{HTTP_HOST}/workforce/programs/welding.html [R=302,L,NC]
 
 # /workforce/programs/manufacturingtrades/  (delete)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/manufacturingtrades/index.html !-f
-RewriteRule ^workforce/programs/manufacturingtrades(/|/index\.html)?$ /workforce/programs/ [R=302,L,NC]
+RewriteRule ^workforce/programs/manufacturingtrades(/|/index\.html)?$ https://%{HTTP_HOST}/workforce/programs/ [R=302,L,NC]
 
 # /workforce/programs/renewableenergy/  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/renewableenergy/index.html !-f
-RewriteRule ^workforce/programs/renewableenergy(/|/index\.html)?$ /workforce/programs/offshore-wind.html [R=302,L,NC]
+RewriteRule ^workforce/programs/renewableenergy(/|/index\.html)?$ https://%{HTTP_HOST}/workforce/programs/offshore-wind.html [R=302,L,NC]
 
 # /workforce/programs/renewableenergy/solar-energy.html  (delete)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/renewableenergy/solar-energy.html !-f
-RewriteRule ^workforce/programs/renewableenergy/solar-energy(\.html)?$ /workforce/programs/?industry=energy-and-utilities [R=302,L,NC]
+RewriteRule ^workforce/programs/renewableenergy/solar-energy(\.html)?$ https://%{HTTP_HOST}/workforce/programs/?industry=energy-and-utilities [R=302,L,NC]
 
 # /workforce/programs/fit-2-serve/  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/fit-2-serve/index.html !-f
-RewriteRule ^workforce/programs/fit-2-serve(/|/index\.html)?$ /workforce/programs/fit-2-serve.html [R=302,L,NC]
+RewriteRule ^workforce/programs/fit-2-serve(/|/index\.html)?$ https://%{HTTP_HOST}/workforce/programs/fit-2-serve.html [R=302,L,NC]
 
 # /workforce/programs/technologyonline/BusinessComputingApplications.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/technologyonline/BusinessComputingApplications.html !-f
-RewriteRule ^workforce/programs/technologyonline/BusinessComputingApplications(\.html)?$ /workforce/programs/business-computing-applications.html [R=302,L,NC]
+RewriteRule ^workforce/programs/technologyonline/BusinessComputingApplications(\.html)?$ https://%{HTTP_HOST}/workforce/programs/business-computing-applications.html [R=302,L,NC]
 
 # /workforce/programs/technologyonline/DealerTraining.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/technologyonline/DealerTraining.html !-f
-RewriteRule ^workforce/programs/technologyonline/DealerTraining(\.html)?$ /workforce/programs/table-games.html [R=302,L,NC]
+RewriteRule ^workforce/programs/technologyonline/DealerTraining(\.html)?$ https://%{HTTP_HOST}/workforce/programs/table-games.html [R=302,L,NC]
 
 # /workforce/programs/technologyonline/OnlineTraining.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/technologyonline/OnlineTraining.html !-f
-RewriteRule ^workforce/programs/technologyonline/OnlineTraining(\.html)?$ /workforce/programs/online-training.html [R=302,L,NC]
+RewriteRule ^workforce/programs/technologyonline/OnlineTraining(\.html)?$ https://%{HTTP_HOST}/workforce/programs/online-training.html [R=302,L,NC]
 
 # /workforce/programs/technologyonline/ProgramInquiryForm.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/technologyonline/ProgramInquiryForm.html !-f
-RewriteRule ^workforce/programs/technologyonline/ProgramInquiryForm(\.html)?$ /workforce/programs/program-inquiry-form.html [R=302,L,NC]
+RewriteRule ^workforce/programs/technologyonline/ProgramInquiryForm(\.html)?$ https://%{HTTP_HOST}/workforce/programs/program-inquiry-form.html [R=302,L,NC]
 
 # /workforce/programs/technologyonline/PropertyandCasualtyInsurance.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/technologyonline/PropertyandCasualtyInsurance.html !-f
-RewriteRule ^workforce/programs/technologyonline/PropertyandCasualtyInsurance(\.html)?$ /workforce/programs/property-casualty-insurance.html [R=302,L,NC]
+RewriteRule ^workforce/programs/technologyonline/PropertyandCasualtyInsurance(\.html)?$ https://%{HTTP_HOST}/workforce/programs/property-casualty-insurance.html [R=302,L,NC]
 
 # /workforce/programs/technologyonline/SecuritiesIndustryEssentials.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/technologyonline/SecuritiesIndustryEssentials.html !-f
-RewriteRule ^workforce/programs/technologyonline/SecuritiesIndustryEssentials(\.html)?$ /workforce/programs/securities-industry-essentials.html [R=302,L,NC]
+RewriteRule ^workforce/programs/technologyonline/SecuritiesIndustryEssentials(\.html)?$ https://%{HTTP_HOST}/workforce/programs/securities-industry-essentials.html [R=302,L,NC]
 
 # /workforce/programs/technologyonline/banking.html  (move)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/technologyonline/banking.html !-f
-RewriteRule ^workforce/programs/technologyonline/banking(\.html)?$ /workforce/programs/banking.html [R=302,L,NC]
+RewriteRule ^workforce/programs/technologyonline/banking(\.html)?$ https://%{HTTP_HOST}/workforce/programs/banking.html [R=302,L,NC]
 
 # /workforce/programs/technologyonline/  (delete)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/technologyonline/index.html !-f
-RewriteRule ^workforce/programs/technologyonline(/|/index\.html)?$ /workforce/programs/ [R=302,L,NC]
+RewriteRule ^workforce/programs/technologyonline(/|/index\.html)?$ https://%{HTTP_HOST}/workforce/programs/ [R=302,L,NC]
 
 # /workforce/programs/fit-2-serve/images/fit2serve-logo-new.jpg  (move-file)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/fit-2-serve/images/fit2serve-logo-new.jpg !-f
-RewriteRule ^workforce/programs/fit-2-serve/images/fit2serve-logo-new\.jpg$ /workforce/programs/images/fit2serve-logo-new.jpg [R=302,L,NC]
+RewriteRule ^workforce/programs/fit-2-serve/images/fit2serve-logo-new\.jpg$ https://%{HTTP_HOST}/workforce/programs/images/fit2serve-logo-new.jpg [R=302,L,NC]
 
 # /workforce/programs/technologyonline/images/bank-logos/  (move-file)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/technologyonline/images/bank-logos/$1 !-f
-RewriteRule ^workforce/programs/technologyonline/images/bank-logos/(.+)$ /workforce/programs/images/bank-logos/$1 [R=302,L,NC]
+RewriteRule ^workforce/programs/technologyonline/images/bank-logos/(.+)$ https://%{HTTP_HOST}/workforce/programs/images/bank-logos/$1 [R=302,L,NC]
 
 # /workforce/programs/technologyonline/blys_lnc_lg_vrt_rgb_pos_210420.jpg  (move-file)
 RewriteCond %{DOCUMENT_ROOT}/workforce/programs/technologyonline/blys_lnc_lg_vrt_rgb_pos_210420.jpg !-f
-RewriteRule ^workforce/programs/technologyonline/blys_lnc_lg_vrt_rgb_pos_210420\.jpg$ /workforce/programs/images/blys_lnc_lg_vrt_rgb_pos_210420.jpg [R=302,L,NC]
+RewriteRule ^workforce/programs/technologyonline/blys_lnc_lg_vrt_rgb_pos_210420\.jpg$ https://%{HTTP_HOST}/workforce/programs/images/blys_lnc_lg_vrt_rgb_pos_210420.jpg [R=302,L,NC]
 # ---------------- END WORKFORCE PROGRAMS MOVE ----------------

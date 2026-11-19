@@ -49,6 +49,9 @@ def rules_for(row, status):
     check_safe(new)
     path = old.lstrip("/")
     flags = f"[R={status},L,NC]"
+    # Absolute https:// target: the site sits behind a proxy, so a relative
+    # target comes back as http:// and the HTTPS rule adds a second hop.
+    new = "https://%{HTTP_HOST}" + new
 
     if action == "move-file" and old.endswith("/"):
         # A folder of files: redirect each file inside it
