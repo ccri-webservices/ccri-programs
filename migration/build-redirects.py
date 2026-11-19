@@ -43,7 +43,21 @@ def check_safe(url):
         sys.exit(f"Unsafe character in {url!r} - fix the CSV")
 
 
-def rules_for(row, status):
+def collision_folders(rows):
+    """Old folders whose name matches a new page beside them, e.g.
+    /workforce/programs/fit-2-serve/ -> /workforce/programs/fit-2-serve.html.
+    The live server's extension matching serves the new page for any URL
+    under the old folder before a path-based RewriteRule can match, so
+    rules for these URLs must match the original URL (REQUEST_URI)."""
+    new_urls = {r["new_url"] for r in rows}
+    return [
+        r["old_url"]
+        for r in rows
+        if r["old_url"].endswith("/") and r["old_url"].rstrip("/") + ".html" in new_urls
+    ]
+
+
+def rules_for(row, status, collisions=()):
     old, new, action = row["old_url"], row["new_url"], row["action"]
     check_safe(old)
     check_safe(new)
@@ -52,6 +66,19 @@ def rules_for(row, status):
     # Absolute https:// target: the site sits behind a proxy, so a relative
     # target comes back as http:// and the HTTPS rule adds a second hop.
     new = "https://%{HTTP_HOST}" + new
+
+    if any(old.startswith(folder) for folder in collisions):
+        if old.endswith("/"):
+            uri = esc(old.rstrip("/")) + "(/|/index\\.html)?"
+            exists = f"{path}index.html"
+        else:
+            uri = esc(old)
+            exists = path
+        return [
+            f"RewriteCond %{{REQUEST_URI}} ^{uri}$ [NC]",
+            f"RewriteCond %{{DOCUMENT_ROOT}}/{exists} !-f",
+            f"RewriteRule ^ {new} {flags}",
+        ]
 
     if action == "move-file" and old.endswith("/"):
         # A folder of files: redirect each file inside it
@@ -94,10 +121,11 @@ def main():
         "# Each rule only fires once its old file is gone (RewriteCond ... !-f).",
         f"# Status: {status}" + (" (testing - switch to 301 after launch)" if status == 302 else ""),
     ]
+    collisions = collision_folders(rows)
     for row in rows:
         lines.append("")
         lines.append(f"# {row['old_url']}  ({row['action']})")
-        lines.extend(rules_for(row, status))
+        lines.extend(rules_for(row, status, collisions))
     lines.append("# ---------------- END WORKFORCE PROGRAMS MOVE ----------------")
 
     OUT_PATH.write_text("\n".join(lines) + "\n")
