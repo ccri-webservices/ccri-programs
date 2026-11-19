@@ -1,0 +1,62 @@
+old_url,new_url,action,in_directory,notes
+/workforce/programs/education/EarlyChildhoodEducation2.html,/workforce/programs/early-childhood-education.html,move,yes,
+/workforce/programs/education/ParaPro.html,/workforce/programs/parapro-assessment.html,move,yes,
+/workforce/programs/education/TeachersAssistant.html,/workforce/programs/teacher-assistant.html,move,yes,
+/workforce/programs/education/,/workforce/programs/?industry=education,delete,no,industry index page
+/workforce/programs/healthcare/ACLS.html,/workforce/programs/acls.html,move,yes,
+/workforce/programs/healthcare/AdvancedEmergencyMedicalTechnician.html,/workforce/programs/advanced-emt.html,move,yes,
+/workforce/programs/healthcare/BLSCPR.html,/workforce/programs/bls-cpr.html,move,yes,
+/workforce/programs/healthcare/BLSCPRHandsOnSkillsDemo.html,/workforce/programs/bls-cpr-skills-demo.html,move,yes,
+/workforce/programs/healthcare/BLSCPRHeartsaverFirstAid.html,/workforce/programs/heartsaver-first-aid-cpr.html,move,yes,
+/workforce/programs/healthcare/CEHCBS.html,/workforce/programs/hcbs-continuing-education.html,move,yes,
+/workforce/programs/healthcare/CNA.html,/workforce/programs/cna.html,move,yes,
+/workforce/programs/healthcare/CNAStateTest.html,/workforce/programs/cna-state-test.html,move,yes,
+/workforce/programs/healthcare/CaseManager.html,/workforce/programs/case-manager.html,move,yes,
+/workforce/programs/healthcare/DentalAssistant.html,/workforce/programs/dental-assistant.html,move,yes,
+/workforce/programs/healthcare/DentalRadiography.html,/workforce/programs/dental-radiography.html,move,yes,
+/workforce/programs/healthcare/EmergencyMedicalTechnician.html,/workforce/programs/emt.html,move,yes,
+/workforce/programs/healthcare/EmpowerRN.html,/workforce/programs/empower-rn.html,move,yes,
+/workforce/programs/healthcare/Laser.html,/workforce/programs/dental-laser.html,move,yes,
+/workforce/programs/healthcare/MedicalAssistant.html,/workforce/programs/medical-assistant.html,move,yes,
+/workforce/programs/healthcare/MedicationAideTech.html,/workforce/programs/medication-aide.html,move,yes,
+/workforce/programs/healthcare/Ophthalmic.html,/workforce/programs/ophthalmic-technician.html,move,yes,
+/workforce/programs/healthcare/PatientSupportSpecialist.html,/workforce/programs/patient-support-specialist.html,move,yes,
+/workforce/programs/healthcare/PharmacyTechnician.html,/workforce/programs/pharmacy-technician.html,move,yes,
+/workforce/programs/healthcare/PublicHealthDentalHygienist.html,/workforce/programs/public-health-dental-hygienist.html,move,yes,
+/workforce/programs/healthcare/RefreshRN.html,/workforce/programs/refresh-rn.html,move,yes,
+/workforce/programs/healthcare/SterileProcessingTech.html,/workforce/programs/sterile-processing-technician.html,move,yes,
+/workforce/programs/healthcare/immunization-health-compliance.html,/workforce/programs/immunization-health-compliance.html,move,no,policy page linked from healthcare programs; not a directory card
+/workforce/programs/healthcare/refresh-lpn.html,/workforce/programs/refresh-lpn.html,move,yes,
+/workforce/programs/healthcare/stop-the-bleed.html,/workforce/programs/stop-the-bleed.html,move,no,real program; add to directory
+/workforce/programs/healthcare/,/workforce/programs/?industry=healthcare-and-life-sciences,delete,no,industry index page
+/workforce/programs/hospitality/culinary.html,/workforce/programs/culinary.html,move,no,not launched yet; stays unlisted
+/workforce/programs/hospitality/table-games.html,/workforce/programs/table-games.html,delete,no,empty placeholder; real page is technologyonline/DealerTraining
+/workforce/programs/hospitality/,/workforce/programs/?industry=hospitality,delete,no,industry index page
+/workforce/programs/manufacturingtrades/CNC.html,/workforce/programs/cnc-manufacturing.html,move,yes,
+/workforce/programs/manufacturingtrades/ElectricalApprenticeship.html,/workforce/programs/electrical-apprenticeship.html,move,yes,
+/workforce/programs/manufacturingtrades/MC3.html,/workforce/programs/ready-to-build-mc3.html,move,yes,
+/workforce/programs/manufacturingtrades/OSHA.html,/workforce/programs/osha-10.html,move,yes,
+/workforce/programs/manufacturingtrades/ProcessTech.html,/workforce/programs/process-technology.html,move,yes,
+/workforce/programs/manufacturingtrades/electric-boat-trades.html,/workforce/programs/electric-boat-trades.html,move,yes,
+/workforce/programs/manufacturingtrades/techamp.html,/workforce/programs/techamp.html,move,no,has noindex (hidden on purpose); keep noindex
+/workforce/programs/manufacturingtrades/utilities.html,/workforce/programs/intro-to-utilities.html,move,yes,
+/workforce/programs/manufacturingtrades/water-treatment-distribution.html,/workforce/programs/water-treatment-distribution.html,move,yes,
+/workforce/programs/manufacturingtrades/water.html,/workforce/programs/clean-water-workforce.html,move,yes,
+/workforce/programs/manufacturingtrades/welding.html,/workforce/programs/welding.html,move,yes,
+/workforce/programs/manufacturingtrades/,/workforce/programs/,delete,no,industry index page; split across 3 industries so goes to unfiltered directory
+/workforce/programs/renewableenergy/,/workforce/programs/offshore-wind.html,move,yes,index.pcf is the GWO program page itself
+/workforce/programs/renewableenergy/solar-energy.html,/workforce/programs/?industry=energy-and-utilities,delete,no,empty placeholder
+/workforce/programs/fit-2-serve/,/workforce/programs/fit-2-serve.html,move,yes,index.pcf is the Fit2Serve program page itself
+/workforce/programs/technologyonline/BusinessComputingApplications.html,/workforce/programs/business-computing-applications.html,move,yes,
+/workforce/programs/technologyonline/DealerTraining.html,/workforce/programs/table-games.html,move,yes,Introduction to Table Games
+/workforce/programs/technologyonline/OnlineTraining.html,/workforce/programs/online-training.html,move,yes,ed2go
+/workforce/programs/technologyonline/ProgramInquiryForm.html,/workforce/programs/program-inquiry-form.html,move,no,shared form linked from many program pages
+/workforce/programs/technologyonline/PropertyandCasualtyInsurance.html,/workforce/programs/property-casualty-insurance.html,move,yes,
+/workforce/programs/technologyonline/SecuritiesIndustryEssentials.html,/workforce/programs/securities-industry-essentials.html,move,yes,
+/workforce/programs/technologyonline/banking.html,/workforce/programs/banking.html,move,yes,
+/workforce/programs/technologyonline/,/workforce/programs/,delete,no,industry index page; split across 2 industries so goes to unfiltered directory
+/workforce/programs/CoEmaritime/,/workforce/programs/,delete,no,already redirected by existing .htaccess rule; just delete the 2 pages
+/workforce/programs/employersolutions/,,stays,no,not a program; keeps its own nav item and URLs
+/workforce/programs/fit-2-serve/images/fit2serve-logo-new.jpg,/workforce/programs/images/fit2serve-logo-new.jpg,move-file,,image
+/workforce/programs/technologyonline/images/bank-logos/,/workforce/programs/images/bank-logos/,move-file,,5 bank logos (banking page)
+/workforce/programs/technologyonline/blys_lnc_lg_vrt_rgb_pos_210420.jpg,/workforce/programs/images/blys_lnc_lg_vrt_rgb_pos_210420.jpg,move-file,,image
