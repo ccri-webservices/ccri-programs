@@ -208,18 +208,30 @@
   }
 
   /* ══ URL ↔ STATE ══ */
+  /* Industries go in the URL as slugs: "GED & Adult Education" →
+     "ged-adult-education". No spaces, "&", or "%" — safe to use in
+     .htaccess redirects. Full names (?industry=Healthcare+and+...) still work. */
+  function slugify(name) {
+    return name
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "");
+  }
+
   function readParams() {
     const p = new URLSearchParams(window.location.search);
     searchInput.value = p.get("q") || "";
-    const industry = p.get("industry") || "";
-    if ([...industrySelect.options].some((o) => o.value === industry))
-      industrySelect.value = industry;
+    const slug = slugify(p.get("industry") || "");
+    const match = [...industrySelect.options].find(
+      (o) => o.value && slugify(o.value) === slug,
+    );
+    if (match) industrySelect.value = match.value;
   }
 
   function pushParams() {
     const p = new URLSearchParams();
     if (searchInput.value.trim()) p.set("q", searchInput.value.trim());
-    if (industrySelect.value) p.set("industry", industrySelect.value);
+    if (industrySelect.value) p.set("industry", slugify(industrySelect.value));
     const qs = p.toString();
     history.replaceState(null, "", qs ? "?" + qs : window.location.pathname);
   }

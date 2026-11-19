@@ -41,7 +41,7 @@ JavaScript files that power the program directory page filtering and individual 
 - Builds the search box, Industry dropdown, and card grid inside `<div id="workforce-directory">`
 - Shows workforce programs only, from `program-list.php`
 - Cards show image (default: `/workforce/programs/images/workforce-default.webp`), industry, title, and description
-- URL state (`?industry=...&q=...`) so filtered views can be shared or linked to
+- URL state (`?industry=healthcare-and-life-sciences&q=...`) so filtered views can be shared or linked to; industries use hyphenated slugs (full names still accepted)
 
 ## How They Work Together
 
