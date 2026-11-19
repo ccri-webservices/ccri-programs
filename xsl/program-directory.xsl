@@ -17,14 +17,44 @@ Last Updated: 2/19/2016
     exclude-result-prefixes="ou xsl xs fn ouc">
     <xsl:import href="common.xsl" />
     <xsl:template name="template-headcode">
-		
-		
+		<style>
+			/* Mobile "Filters" toggle — same pattern as the course directory.
+			   Desktop: hidden, all filters show. At 991px and below (where the
+			   sidebar stacks above the results) the filters collapse behind it. */
+			.filter-toggle { display: none; }
+
+			@media (max-width: 991px) {
+				.filter-toggle {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					gap: 0.5em;
+					width: 100%;
+					padding: 0.9em 1.25em;
+					background: #fff;
+					border: 1px solid #dcdcdc;
+					border-radius: 12px;
+					font-size: 1.1em;
+					font-weight: 600;
+					color: var(--ink);
+					cursor: pointer;
+				}
+				.filter-toggle:focus-visible {
+					outline: 3px solid #00703c;
+					outline-offset: 2px;
+				}
+				.filter-toggle-icon { width: 1.2em; height: 1.2em; }
+				.filter-toggle-count:not(:empty) { margin-left: 0.4em; }
+				.filter-collapse { display: none; margin-top: 2em; }
+				.filter-collapse.is-open { display: block; }
+			}
+		</style>
 		</xsl:template>
 	
 	
 	<xsl:template name="template-footcode">
 	  <script src="/_resources-2025/js/program-config.js?v=2.0.5"></script>
-        <script src="/_resources-2025/js/program-directory.js?v=2.0.6"></script>
+        <script src="/_resources-2025/js/program-directory.js?v=2.0.7"></script>
         
         <script>
 			(function() {
@@ -413,6 +443,13 @@ programs.forEach(program => {
         </div>
     </div>
 
+    <!-- Mobile "Filters" toggle (hidden on desktop) — same pattern as the course directory -->
+    <button type="button" class="filter-toggle" id="filterToggle" aria-expanded="false" aria-controls="filterPanel">
+        <svg class="filter-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M7 12h10M10 17h4" stroke-linecap="round"></path></svg>
+        Filters<span class="filter-toggle-count" id="filterToggleCount"></span>
+    </button>
+
+    <div class="filter-collapse" id="filterPanel">
     <!-- Filter by Pathway -->
     <div class="filter-panel">
         <div class="filter-panel-hdr"><label for="pathwayF">Filter by Pathway</label></div>
@@ -464,6 +501,7 @@ programs.forEach(program => {
 
     <!-- Clear Filters -->
     <button class="clear-btn" id="clearBtn" onclick="clearAll()">✕ Clear all filters</button>
+    </div>
 </aside>
                             </div>
                         </div>

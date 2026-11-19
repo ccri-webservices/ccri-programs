@@ -48,6 +48,15 @@ function initDirectory() {
   // didn't exist yet when we tried to set their values from the URL.
   buildFilters();
   pullParams();
+
+  /* Mobile "Filters" toggle (only visible at 991px and below) */
+  const filterToggle = document.getElementById("filterToggle");
+  if (filterToggle)
+    filterToggle.addEventListener("click", () => {
+      const isOpen = filterToggle.getAttribute("aria-expanded") !== "true";
+      filterToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      document.getElementById("filterPanel").classList.toggle("is-open", isOpen);
+    });
 }
 
 function pullParams() {
@@ -299,6 +308,19 @@ function _filter() {
   });
 
   cntEl.textContent = filteredCards.length;
+
+  // Number of active dropdown filters, shown on the mobile toggle: "Filters (2)"
+  const toggleCount = document.getElementById("filterToggleCount");
+  if (toggleCount) {
+    const active = [
+      state.pathway,
+      state.type,
+      state.az,
+      state.workforceCategory,
+      state.location,
+    ].filter(Boolean).length;
+    toggleCount.textContent = active ? "(" + active + ")" : "";
+  }
   renderChips();
   clearBtn.classList.toggle(
     "visible",
