@@ -28,9 +28,10 @@
   margin-bottom: 2em;
 }
 
+/* Industry on the left, wider search on the right */
 @media (min-width: 768px) {
   .wf-dir-filters {
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 2fr 3fr;
   }
 }
 
